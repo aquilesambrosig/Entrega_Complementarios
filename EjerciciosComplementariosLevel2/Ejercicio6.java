@@ -19,9 +19,9 @@ public class Ejercicio6 {
 
         for (Empleado emp : lista) {
             
-            int sueldo = emp.horasTrabajadas * emp.valoPorHora;
+            int sueldo = emp.getHorasTrabajadas() * emp.getValoPorHora();
             /*System.out.println(emp.nombre + " - " + emp.dni+" - "+sueldo);*/
-            Diccionario.put(emp.dni, sueldo);
+            Diccionario.put(emp.getDni(), sueldo);
             
             
             
@@ -34,11 +34,11 @@ public class Ejercicio6 {
 }
 
 class Empleado {
-    int dni;
-    String nombre;
-    String apellido;
-    int horasTrabajadas;
-    int valoPorHora;
+    private int dni;
+    private String nombre;
+    private String apellido;
+    private int horasTrabajadas;
+    private int valoPorHora;
 
     public Empleado( String nombre, String apellido, int dni, int horasTrabajadas, int valorPorHora) {
         this.nombre = nombre;
@@ -46,6 +46,17 @@ class Empleado {
         this.dni = dni;
         this.horasTrabajadas = horasTrabajadas;
         this.valoPorHora = valorPorHora;
+    }
+    public int getDni() {
+        return dni;
+    }
+    public int getValoPorHora() {
+        return valoPorHora;
+    }
+    public int getHorasTrabajadas() {
+        return horasTrabajadas;
+    }
+
+        
         
     }
-}
